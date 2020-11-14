@@ -8,9 +8,9 @@
     "start": "tsc && node build/index.js",
     "test": "jest --verbose",
     "test-watch": "jest --verbose --watchAll",
-    "test-data" : "echo TODO",
-    "test-domain": "echo TODO",
-    "test-presentation": "echo TODO"
+    "test-data" : "jest --verbose src/data",
+    "test-domain": "jest --verbose src/domain",
+    "test-presentation": "jest --verbose src/presentation"
   },
   "keywords": [],
   "author": "Melwin Magalhaes",
