@@ -1,8 +1,9 @@
 import {HttpRequest} from "../../protocols/http/HttpRequest";
 import {Request, Response} from "express";
 import {HttpResponse} from "../../protocols/http/HttpResponse";
+import {RouterAdapter} from "./RouterAdapter";
 
-export class RouteAdapter {
+export class ExpressRouterAdapter implements RouterAdapter{
 
     adaptRoute(delegate: (httpRequest: HttpRequest) => Promise<HttpResponse>) {
         return async (req: Request, res: Response) => {

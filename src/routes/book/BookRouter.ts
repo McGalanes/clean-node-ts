@@ -1,11 +1,11 @@
 import {Router} from "express";
-import BookController from "../../presentation/controllers/book/BookController";
-import {RouteAdapter} from "../../presentation/controllers/adapter/RouteAdapter";
+import {BookController} from "../../presentation/controllers/book/BookController";
+import {RouterAdapter} from "../../presentation/controllers/adapter/RouterAdapter";
 
 export class BookRouter {
     constructor(
         private readonly router: Router,
-        private readonly adapter: RouteAdapter,
+        private readonly adapter: RouterAdapter,
         private readonly controller: BookController
     ) {
     }
