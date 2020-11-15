@@ -1,5 +1,5 @@
-import { Server } from "./server/Server";
-import { createDependencyContainer } from "./injection/DependencyContainer";
+import { Server } from "./server";
+import { createDependencyContainer } from "./injection";
 
 export function init() {
     try {

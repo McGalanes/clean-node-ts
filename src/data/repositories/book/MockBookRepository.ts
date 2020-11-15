@@ -1,5 +1,5 @@
-import { BookRepository } from "../BookRepository";
-import { BookEntity } from "../entities/BookEntity";
+import { BookRepository } from "./BookRepository";
+import { BookEntity } from "./entities/BookEntity";
 
 export class MockBookRepository implements BookRepository {
 

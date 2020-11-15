@@ -1,5 +1,4 @@
-import { HttpRequest } from "../../protocols/http/HttpRequest";
-import { HttpResponse } from "../../protocols/http/HttpResponse";
+import { HttpRequest, HttpResponse } from "../../protocols/http";
 import { Request, Response } from "express";
 
 export interface RouterAdapter {

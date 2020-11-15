@@ -1,10 +1,8 @@
-import { BookRepository } from "../data/repositories/book/BookRepository";
-import { GetBooksUseCase, IGetBooksUseCase } from "../domain/usecases/book/GetBooksUseCase";
-import { RouterAdapter } from "../presentation/controllers/adapter/RouterAdapter";
-import { BookRouter } from "../routes/book/BookRouter";
-import { MockBookRepository } from "../data/repositories/book/mock/MockBookRepository";
-import { ExpressRouterAdapter } from "../presentation/controllers/adapter/ExpressRouterAdapter";
-import { BookController } from "../presentation/controllers/book/BookController";
+import { ExpressRouterAdapter, RouterAdapter } from "../presentation/controllers/adapter";
+import { BookRouter } from "../routes";
+import { BookController } from "../presentation/controllers";
+import { BookRepository, MockBookRepository } from "../data/repositories/book";
+import { GetBooksUseCase, IGetBooksUseCase } from "../domain/usecases/book";
 
 export interface DependencyContainer {
     routerAdapter: RouterAdapter

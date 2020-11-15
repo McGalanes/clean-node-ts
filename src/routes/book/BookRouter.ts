@@ -1,5 +1,5 @@
-import { BookController } from "../../presentation/controllers/book/BookController";
-import { RouterAdapter } from "../../presentation/controllers/adapter/RouterAdapter";
+import { BookController } from "../../presentation/controllers";
+import { RouterAdapter } from "../../presentation/controllers/adapter";
 import { Router } from "express";
 
 export class BookRouter {

@@ -1,5 +1,5 @@
 import express, { Express, Router } from 'express'
-import { BookRouter } from "../routes/book/BookRouter";
+import { BookRouter } from "../routes";
 
 export class Server {
     constructor(private readonly bookRouter: BookRouter) {}
