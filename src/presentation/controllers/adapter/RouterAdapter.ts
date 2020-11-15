@@ -1,6 +1,6 @@
-import {HttpRequest} from "../../protocols/http/HttpRequest";
-import {HttpResponse} from "../../protocols/http/HttpResponse";
-import {Request, Response} from "express";
+import { HttpRequest } from "../../protocols/http/HttpRequest";
+import { HttpResponse } from "../../protocols/http/HttpResponse";
+import { Request, Response } from "express";
 
 export interface RouterAdapter {
     adaptRoute(

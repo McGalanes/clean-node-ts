@@ -1,5 +1,5 @@
-import {IGetBooksUseCase} from "../../../domain/usecases/book/GetBooksUseCase";
-import {HttpResponse} from "../../protocols/http/HttpResponse";
+import { IGetBooksUseCase } from "../../../domain/usecases/book/GetBooksUseCase";
+import { HttpResponse } from "../../protocols/http/HttpResponse";
 
 export class BookController {
     constructor(private readonly getBooksUseCase: IGetBooksUseCase) {}

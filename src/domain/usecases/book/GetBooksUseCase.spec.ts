@@ -1,6 +1,6 @@
-import {BookRepository} from "../../../data/repositories/book/BookRepository";
-import {BookEntity} from "../../../data/repositories/book/entities/BookEntity";
-import {GetBooksUseCase} from "./GetBooksUseCase";
+import { BookRepository } from "../../../data/repositories/book/BookRepository";
+import { BookEntity } from "../../../data/repositories/book/entities/BookEntity";
+import { GetBooksUseCase } from "./GetBooksUseCase";
 
 
 describe('GetBooksUseCase', () => {

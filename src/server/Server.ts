@@ -1,5 +1,5 @@
-import express, {Express, Router} from 'express'
-import {BookRouter} from "../routes/book/BookRouter";
+import express, { Express, Router } from 'express'
+import { BookRouter } from "../routes/book/BookRouter";
 
 export class Server {
     constructor(private readonly bookRouter: BookRouter) {}
@@ -7,7 +7,7 @@ export class Server {
     start(port: number) {
         const app = express()
 
-       this.initApiRouters(app)
+        this.initApiRouters(app)
 
         app.listen(port, () => {
             console.log('Server started (port:%s)', port)
@@ -15,7 +15,7 @@ export class Server {
     }
 
     private initApiRouters(app: Express) {
-        const router = Router() 
+        const router = Router()
         app.use('/api', router)
 
         this.bookRouter.init(router)

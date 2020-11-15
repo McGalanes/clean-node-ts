@@ -1,6 +1,6 @@
-import {BookController} from "../../presentation/controllers/book/BookController";
-import {RouterAdapter} from "../../presentation/controllers/adapter/RouterAdapter";
-import {Router} from "express";
+import { BookController } from "../../presentation/controllers/book/BookController";
+import { RouterAdapter } from "../../presentation/controllers/adapter/RouterAdapter";
+import { Router } from "express";
 
 export class BookRouter {
     constructor(

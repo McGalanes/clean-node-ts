@@ -1,7 +1,7 @@
-import {IGetBooksUseCase} from "../../../domain/usecases/book/GetBooksUseCase";
-import {BookController} from "./BookController";
-import {BookEntity} from "../../../data/repositories/book/entities/BookEntity";
-import {HttpResponse} from "../../protocols/http/HttpResponse";
+import { IGetBooksUseCase } from "../../../domain/usecases/book/GetBooksUseCase";
+import { BookController } from "./BookController";
+import { BookEntity } from "../../../data/repositories/book/entities/BookEntity";
+import { HttpResponse } from "../../protocols/http/HttpResponse";
 
 describe('BookController', () => {
 
