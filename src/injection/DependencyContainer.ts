@@ -1,5 +1,5 @@
 import {BookRepository} from "../data/repositories/book/BookRepository";
-import GetBooksUseCase from "../domain/usecases/book/GetBooksUseCase";
+import {GetBooksUseCase, IGetBooksUseCase} from "../domain/usecases/book/GetBooksUseCase";
 import {RouterAdapter} from "../presentation/controllers/adapter/RouterAdapter";
 import {BookRouter} from "../routes/book/BookRouter";
 import {MockBookRepository} from "../data/repositories/book/mock/MockBookRepository";
@@ -15,7 +15,7 @@ export interface DependencyContainer {
 
     useCases: {
         book: {
-            getBooks: GetBooksUseCase
+            getBooks: IGetBooksUseCase
         }
     }
 

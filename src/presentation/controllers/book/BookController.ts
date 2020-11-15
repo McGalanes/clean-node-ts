@@ -1,15 +1,15 @@
-import GetBooksUseCase from "../../../domain/usecases/book/GetBooksUseCase";
+import {IGetBooksUseCase} from "../../../domain/usecases/book/GetBooksUseCase";
 import {HttpResponse} from "../../protocols/http/HttpResponse";
 
 export class BookController {
-    constructor(private readonly getBooksUseCase: GetBooksUseCase) {}
+    constructor(private readonly getBooksUseCase: IGetBooksUseCase) {}
 
     async getBooks(): Promise<HttpResponse> {
         try {
             const books = await this.getBooksUseCase.execute()
-            return books.length ? HttpResponse.ok(books) : HttpResponse.noContent()
+            return HttpResponse.ok(books)
         } catch (error) {
-            return error
+            return HttpResponse.serverError()
         }
     }
 }

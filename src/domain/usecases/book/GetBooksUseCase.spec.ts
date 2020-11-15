@@ -1,6 +1,6 @@
 import {BookRepository} from "../../../data/repositories/book/BookRepository";
 import {BookEntity} from "../../../data/repositories/book/entities/BookEntity";
-import GetBooksUseCase from "./GetBooksUseCase";
+import {GetBooksUseCase} from "./GetBooksUseCase";
 
 
 describe('GetBooksUseCase', () => {
@@ -8,7 +8,7 @@ describe('GetBooksUseCase', () => {
     it('should call Repository', () => {
         //GIVEN
         const repository: BookRepository = {
-            getBooks: jest.fn().mockResolvedValueOnce([])
+            getBooks: jest.fn()
         }
         const useCase = new GetBooksUseCase(repository)
 
@@ -19,7 +19,7 @@ describe('GetBooksUseCase', () => {
         expect(repository.getBooks).toBeCalled()
     })
 
-    it('should return data when call to Repository succeed', async () => {
+    it('should return data when success', async () => {
         //GIVEN
         const books = [
             new BookEntity("0", "Harry Potter 1", "JK Rowling"),
@@ -37,7 +37,7 @@ describe('GetBooksUseCase', () => {
         expect(actual).toEqual(books)
     })
 
-    it('should return error when call to Repository fail', () => {
+    it('should return error when fail', () => {
         //GIVEN
         const repository: BookRepository = {
             getBooks: jest.fn().mockRejectedValueOnce("error")
