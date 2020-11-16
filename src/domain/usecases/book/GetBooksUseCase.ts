@@ -1,13 +1,13 @@
 import { BookEntity, BookRepository } from "../../../data/repositories/book";
 
-export class GetBooksUseCase implements IGetBooksUseCase {
-    constructor(private readonly repository: BookRepository) {}
+export class GetBooksUseCase {
+    private repository: BookRepository
+
+    constructor(repository: BookRepository) {
+        this.repository = repository
+    }
 
     async execute(): Promise<BookEntity[]> {
         return this.repository.getBooks()
     }
-}
-
-export interface IGetBooksUseCase {
-    execute(): Promise<BookEntity[]>
 }

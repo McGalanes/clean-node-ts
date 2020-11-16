@@ -1,5 +1,6 @@
-import { IGetBooksUseCase } from "../../../domain/usecases/book";
+import { GetBooksUseCase } from "../../../domain/usecases/book";
 import { BookController } from "./BookController";
+import { instance, mock, verify, when } from "ts-mockito";
 import { BookEntity } from "../../../data/repositories/book";
 import { HttpResponse } from "../../protocols/http";
 
@@ -9,16 +10,14 @@ describe('BookController', () => {
 
         it('should call getBooksUseCase', () => {
             //GIVEN
-            const getBooksUseCase: IGetBooksUseCase = {
-                execute: jest.fn()
-            }
-            const controller = new BookController(getBooksUseCase)
+            const mockedGetBooksUseCase = mock(GetBooksUseCase)
+            const controller = new BookController(instance(mockedGetBooksUseCase))
 
             //WHEN
             controller.getBooks()
 
             //THEN
-            expect(getBooksUseCase.execute).toBeCalled()
+            verify(mockedGetBooksUseCase.execute()).called()
         })
 
         it('should return HTTP 200 with filled data collection when success', async () => {
@@ -27,10 +26,9 @@ describe('BookController', () => {
                 new BookEntity("0", "Harry Potter 1", "JK Rowling"),
                 new BookEntity("1", "Harry Potter 2", "JK Rowling")
             ]
-            const getBooksUseCase: IGetBooksUseCase = {
-                execute: jest.fn().mockResolvedValue(books)
-            }
-            const controller = new BookController(getBooksUseCase)
+            const mockedGetBooksUseCase = mock(GetBooksUseCase)
+            when(mockedGetBooksUseCase.execute()).thenResolve(books)
+            const controller = new BookController(instance(mockedGetBooksUseCase))
 
             //WHEN
             const actual = await controller.getBooks()
@@ -41,10 +39,9 @@ describe('BookController', () => {
 
         it('should return HTTP 200 with empty data collection when success', async () => {
             //GIVEN
-            const getBooksUseCase: IGetBooksUseCase = {
-                execute: jest.fn().mockResolvedValue([])
-            }
-            const controller = new BookController(getBooksUseCase)
+            const mockedGetBooksUseCase = mock(GetBooksUseCase)
+            when(mockedGetBooksUseCase.execute()).thenResolve([])
+            const controller = new BookController(instance(mockedGetBooksUseCase))
 
             //WHEN
             const actual = await controller.getBooks()
@@ -55,10 +52,9 @@ describe('BookController', () => {
 
         it('should return HTTP 500 when fail', async () => {
             //GIVEN
-            const getBooksUseCase: IGetBooksUseCase = {
-                execute: jest.fn().mockRejectedValue("error")
-            }
-            const controller = new BookController(getBooksUseCase)
+            const mockedGetBooksUseCase = mock(GetBooksUseCase)
+            when(mockedGetBooksUseCase.execute()).thenReject()
+            const controller = new BookController(instance(mockedGetBooksUseCase))
 
             //WHEN
             const actual = await controller.getBooks()

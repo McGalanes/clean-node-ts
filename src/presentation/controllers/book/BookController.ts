@@ -1,8 +1,8 @@
-import { IGetBooksUseCase } from "../../../domain/usecases/book/GetBooksUseCase";
-import { HttpResponse } from "../../protocols/http/HttpResponse";
+import { GetBooksUseCase } from "../../../domain/usecases/book";
+import { HttpResponse } from "../../protocols/http";
 
 export class BookController {
-    constructor(private readonly getBooksUseCase: IGetBooksUseCase) {}
+    constructor(private readonly getBooksUseCase: GetBooksUseCase) {}
 
     async getBooks(): Promise<HttpResponse> {
         try {

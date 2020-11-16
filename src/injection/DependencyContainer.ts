@@ -2,7 +2,7 @@ import { ExpressRouterAdapter, RouterAdapter } from "../presentation/controllers
 import { BookRouter } from "../routes";
 import { BookController } from "../presentation/controllers";
 import { BookRepository, MockBookRepository } from "../data/repositories/book";
-import { GetBooksUseCase, IGetBooksUseCase } from "../domain/usecases/book";
+import { GetBooksUseCase } from "../domain/usecases/book";
 
 export interface DependencyContainer {
     routerAdapter: RouterAdapter
@@ -13,7 +13,7 @@ export interface DependencyContainer {
 
     useCases: {
         book: {
-            getBooks: IGetBooksUseCase
+            getBooks: GetBooksUseCase
         }
     }
 

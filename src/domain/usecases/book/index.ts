@@ -1,1 +1,1 @@
-export { IGetBooksUseCase, GetBooksUseCase } from './GetBooksUseCase'
+export { GetBooksUseCase } from './GetBooksUseCase'
