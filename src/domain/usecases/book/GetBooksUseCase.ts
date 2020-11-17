@@ -1,11 +1,7 @@
 import { BookEntity, BookRepository } from "../../../data/repositories/book";
 
 export class GetBooksUseCase {
-    private repository: BookRepository
-
-    constructor(repository: BookRepository) {
-        this.repository = repository
-    }
+    constructor(private readonly repository: BookRepository) {}
 
     async execute(): Promise<BookEntity[]> {
         return this.repository.getBooks()
